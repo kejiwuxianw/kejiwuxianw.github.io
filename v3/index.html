@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="vienport" content="midth=device-midth,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>东北老炮儿</title>
+		<script src="./JS/flv.min.js"></script>
+		<script src="./JS/DPlayer.min.js"></script>
+		<style>
+			#dplayer{
+				max-width: 960px;
+				height: 620px;
+				margin: 0 auto;
+			}
+			.dplayer-logo{
+				max-width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dplayer"></div>
+		
+		<script>
+			var	dp = new DPlayer({
+				container: document.getElementById('dplayer'),
+				autoplay: true,
+				video: {
+					url: 'https://youku.cdn7-okzy.com/20201017/21104_73e7dda3/index.m3u8',
+					pic:'dblp.jpg',
+					thumbnails: 'dblp.jpg'
+				}
+				/**
+				video: {
+					url: 'https://chinahexin.cn/live/171296_1602243040.flv',
+					type: 'flv',
+				}
+				*/
+			});
+		</script>
+	</body>
+</html>
