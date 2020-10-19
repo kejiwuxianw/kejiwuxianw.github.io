@@ -1,22 +1,129 @@
-﻿<html lang="en">
-	<head>
-		<link rel="icon" href="favicon.ico">
-		<meta charset="utf-8"> <!-- 设置指定编码集,有效的防止出现乱码情况 -->
-		<title>首页</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-		<meta name="author" content="wryxmq,马猩猿"> <!-- 作者，既开发者 -->
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/> <!-- 关闭数字自动拨号功能 -->
+    <title>科技无限</title>
+	<meta name="author" content="wryxmq,马猩猿"> <!-- 作者，既开发者 -->
 		<meta name="keywords" content="wryxmq,猩猿,猩帝,工作室,科技无限"> <!-- 关键词,帮助进行搜索 -->
 		<meta name="description" content="当你以为这是世界尽头时那么你就错了,因为我要带你去逛逛。使合作成为未来的挥霍__wryxmq"> <!-- 网站描述 -->
-	</head>
-	<body>
-		<script>
-			console.log("https://www.microsoft.com/en-us/edge");
-			console.log("https://microsoftedge.microsoft.com/");
-		</script>
-		<h4>网站还在测试部署阶段,感谢前来体验</h4>
-		<p>
-			软件下载 -> <a href="./v1/index.html">访问</a>
-		</p>
-	</body>
+    <link rel="stylesheet" href="indexsrc/fonts/iconfont.css"/>
+    <link rel="stylesheet" href="indexsrc/css/style.min.css">
+    <link rel="stylesheet" href="indexsrc/css/swiper.min.css">
+    <script src="indexsrc/js/loading.js"></script>
+</head>
+<body>
+<header class="header flex flex-vc">
+    <div class="c box-flex-1 text-center">
+		<h1>
+			<p>科</p>
+			<p>技</p>
+			<p>无</p>
+			<p>限</p>
+		</h1>
+		<style>
+			body header div h1 p{
+				display: inline;
+			}
+		</style>
+	</div>
+    <div class="r text-right"></header>
+<!--导航-->
+<div class="banner">
+    <div class="swiper-container">
+        <!--banner图懒加载 data.src-->
+		<!--广告显示-->
+        <div class="swiper-wrapper">
+			<!--图片750*246-->
+            <div class="swiper-slide"><a href="http://baidu.com"><img data-src="./indexsrc/images/a.jpg" alt="" class="img-bespread swiper-lazy"/></a><div class="swiper-lazy-preloader"></div></div>
+			<div class="swiper-slide"><a href="http://baidu.com"><img data-src="./indexsrc/images/b.jpg" alt="" class="img-bespread swiper-lazy"/></a><div class="swiper-lazy-preloader"></div></div>
+			<div class="swiper-slide"><a href="http://baidu.com"><img data-src="./indexsrc/images/c.jpg" alt="" class="img-bespread swiper-lazy"/></a><div class="swiper-lazy-preloader"></div></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--数据列表-->
+<div class="recommend mt1rem">
+    <ul class="none">
+		<a href="./details/000/index.html">
+        <li class="section flex mt1rem recharge-col">
+            <div class=recommend-img>
+				<!-- 图片大小400*560 -->
+                <img src="./indexsrc/images/lmsz.png" alt="loading..">
+            </div>
+            <div class="box-flex-1">
+                <h4 class="none">罗马时钟[2020/10/20]</h4>
+                <p class="fz14rem">罗盘时钟基于jquery-3.4.1.min.js制作，环形罗盘，时钟动画。</p>
+            </div>
+        </li>
+		</a>
+        <li class="section flex mt1rem recharge-col">
+            <div class=recommend-img>
+                <img src="./indexsrc/images/111.jpg" alt="loading..">
+            </div>
+            <div class="box-flex-1">
+                <h4 class="none">2</h4>
+                <p class="fz14rem">oow</p>
+            </div>
+        </li>
+        <li class="section flex mt1rem recharge-col">
+            <div class=recommend-img>
+                <img src="./indexsrc/images/111.jpg" alt="loading..">
+            </div>
+            <div class="box-flex-1">
+                <h4 class="none">3</h4>
+                <p class="fz14rem">231</p>
+            </div>
+        </li>
+        <li class="section flex mt1rem recharge-col">
+            <div class=recommend-img>
+                <img src="./indexsrc/images/111.jpg" alt="loading..">
+            </div>
+            <div class="box-flex-1">
+                <h4 class="none">4</h4>
+                <p class="fz14rem">67</p>
+            </div>
+        </li>
+        <li class="section flex mt1rem recharge-col">
+            <div class=recommend-img>
+                <img src="./indexsrc/images/111.jpg" alt="loading..">
+            </div>
+            <div class="box-flex-1">
+                <h4 class="none">5</h4>
+                <p class="fz14rem">500</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<footer class="footer" style="background: #fff">
+	<a href="#" style="color: #f00">首页</a>
+	<a href="#" style="color: #0f0">下一页</a>
+</footer>
+<footer class="footer">
+    <ul class="none">
+        <li class=""><a href="#">友情链接</a></li>
+        <span class="fg">|</span>
+        <li class=""><a href="#">友情链接</a></li>
+        <span class="fg">|</span>
+        <li class=""><a href="#">关于</a></li>
+    </ul>
+    <p class="none">科技无限 版权所有</p>
+</footer>
+</body>
+<script src="./indexsrc/js/jquery.min.js"></script>
+<script src="./indexsrc/js/script.js"></script>
+<script src="./indexsrc/js/swiper.min.js"></script>
+<script>
+    
+    $(function(){
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 4000,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            lazyLoading : true,
+        });
+    })
+</script>
 </html>

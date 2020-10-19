@@ -1,0 +1,1 @@
+document.write('<a href="http://www.wsisp.com/" target="_blank"><img src="/js/wsisp.gif" width="640" height="60" border="0"></a>')
