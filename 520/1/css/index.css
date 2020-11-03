@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#ffe1f8 30%, #f4fce5);
+}
+
+.heart {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjE3M3B4IiBoZWlnaHQ9IjE1OHB4IiB2aWV3Qm94PSIwIDAgMTczIDE1OCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTczIDE1OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjRUY0NjU3IiBkPSJNMTU3LjMzMSwxNS41MDRjLTE5LjU1OS0xOS41NTktNTEuMjcxLTE5LjU1OS03MC44MzEsMGMtMTkuNTU5LTE5LjU1OS01MS4yNzEtMTkuNTU5LTcwLjgzMSwwDQoJYy0xOS41NTksMTkuNTU5LTE5LjU1OSw1MS4yNzEsMCw3MC44MzFsNzAuODMxLDcwLjgzbDcwLjgzMS03MC44M0MxNzYuODksNjYuNzc1LDE3Ni44OSwzNS4wNjQsMTU3LjMzMSwxNS41MDR6Ii8+DQo8L3N2Zz4=") no-repeat 100%;
+    animation: zoom 1s linear infinite alternate;
+    opacity: 0;
+}
+
+@keyframes zoom {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8,0.8);
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8,0.8);
+        opacity: .3;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../bg.png") 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.face {
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    border-top-right-radius: 15px;
+}
+
+#r-ball {
+    animation: kiss 4s ease infinite;
+    background-color: white;
+}
+
+@keyframes kiss {
+    40% {
+        transform: translate(0px);
+    }
+    50% {
+        transform: translate(30px) rotate(20deg);
+    }
+    60% {
+        transform: translate(-33px);
+    }
+    67% {
+        transform: translate(-33px);
+    }
+    77% {
+        transform: translate(0px);
+    }
+}
+
+.kiss {
+    width: 13px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border-left: 5px solid red;
+}
+
+.kiss-m {
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    opacity: 0;
+    animation: kiss-m 4s ease infinite;
+}
+
+@keyframes kiss-m {
+    0% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 0;
+    }
+    55.1% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 1;
+    }
+    66.1% {
+        opacity: 0;
+    }
+}
+
+.face:after {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 8px;
+    background-color: #e2738b;
+    left: -5px;
+    top: 20px;
+    border-radius: 50%;
+}
+
+.face:before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 8px;
+    background-color: #e2738b;
+    right: -8px;
+    top: 20px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.face-r {
+    left: 0;
+    top: 25px;
+}
+
+.face-r:after {
+    width: 10px;
+    height: 10px;
+    left: 5px;
+}
+
+.face-r:before {
+    width: 10px;
+    height: 10px;
+    right: -4px;
+}
+
+.eye {
+    width: 15px;
+    height: 11px;
+    border-bottom: 5px solid #31cfff;
+    position: absolute;
+}
+
+.eye-r-p {
+    border-top: 5px solid #f8bbda;
+    border-bottom: 0 solid #f8bbda;
+}
+
+.eye-l {
+    left: 10px;
+    transform: rotate(-15deg);
+}
+
+.eye-r {
+    right: 5px;
+    transform: rotate(15deg);
+
+
+}
+
+.mouth {
+    width: 30px;
+    height: 14px;
+    border-radius: 50%;
+    border-bottom: 5px solid #31cfff;
+    position: absolute;
+    bottom: -5px;
+    transform: translate(3px);
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.mouth-r {
+    border-bottom: 5px solid #f8bbda;
+    animation: mouth-m 4s ease infinite;
+}
+
+@keyframes mouth-m {
+    0% {
+        opacity: 1;
+    }
+    54.9% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    66.1% {
+        opacity: 1;
+    }
+}
+
+.ball {
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    background: #fff;
+}
+
+.ball::after, .ball::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 30px;
+    position: absolute;;
+    top: -30px;
+    border-radius: 20px;
+
+}
+
+
+#l-ball::before {
+
+    background: #31cfff;
+    left: 20px;
+    transform: rotate(-30deg);
+}
+
+#l-ball::after {
+    background: #31cfff;
+    right: 20px;
+    transform: rotate(30deg);
+}
+
+#r-ball::before {
+    background: #f8bbda;
+    left: 20px;
+    transform: rotate(-30deg);
+}
+
+#r-ball::after {
+    background: #f8bbda;
+    right: 20px;
+    transform: rotate(30deg);
+}
+
+
+#r-ball {
+    position: relative;
+    z-index: 40;
+    border: 8px solid #f8bbda;
+}
+
+
+#l-ball {
+    animation: close 4s ease infinite;
+    position: relative;
+    z-index: 50;
+    border: 8px solid #31cfff;
+}
+
+.foot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.foot::before, .foot::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: -15px;
+    border-radius: 50%;
+}
+
+.l-foot::after {
+    right: 20px;
+    background: #31cfff;
+}
+
+.l-foot::before {
+    left: 20px;
+    background: #31cfff;
+}
+
+.r-foot::after {
+    background: #f8bbda;
+    left: 20px;
+}
+
+.r-foot::before {
+    background: #f8bbda;
+    right: 20px;
+}
+
+.face-l {
+    animation: face 4s ease infinite;
+}
+
+@keyframes close {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(20px)
+    }
+    35% {
+        transform: translate(20px)
+    }
+    55% {
+        transform: translate(0px)
+    }
+    100% {
+        transform: translate(0px);
+    }
+}
+
+@keyframes face {
+    0% {
+        transform: translate(0) rotate(0);
+    }
+    10% {
+        transform: translate(0) rotate(0);
+    }
+    20% {
+        transform: translate(5px) rotate(-2deg);
+    }
+    28% {
+        transform: translate(0) rotate(0);
+    }
+    35% {
+        transform: translate(5px) rotate(-2deg);
+    }
+    50% {
+        transform: translate(0) rotate(0);
+    }
+    100% {
+        transform: translate(0) rotate(0);
+    }
+}

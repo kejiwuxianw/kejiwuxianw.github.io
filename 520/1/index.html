@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>小电视的恋爱</title>
+    <link href="css/index.css" rel="stylesheet">
+    <script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<div class='container' id="autoClick">
+    <div class='ball' id='l-ball'>
+        <span class="foot l-foot"></span>
+        <div class='face face-l'>
+            <div class='eye eye-l'></div>
+            <div class='eye eye-r'></div>
+            <div class='mouth'></div>
+        </div>
+    </div>
+    <div class='ball' id='r-ball'>
+        <span class="foot r-foot"></span>
+        <div class='face face-r'>
+            <div class='eye eye-l eye-r-p'></div>
+            <div class='eye eye-r eye-r-p'></div>
+            <div class='mouth mouth-r'></div>
+            <div class='kiss-m'>
+                <div class='kiss'></div>
+                <div class='kiss'></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="heart"></div>
+
+<script>
+
+    function randomNum(maxNum, minNum) {
+        let max = Math.ceil(maxNum);
+        let min = Math.floor(minNum);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+
+    let timer;
+    timer = setInterval(autoClick, randomNum(1000, 500));
+
+    function autoClick() {
+        clearTimeout(timer);
+        // IE
+        if (document.all) {
+            document.getElementById("autoClick").click();
+        }
+        // 其它浏览器
+        else {
+            let e = document.createEvent("MouseEvents");
+            e.initEvent("click", true, true);
+            document.getElementById("autoClick").dispatchEvent(e);
+        }
+        timer = setInterval(autoClick, randomNum(1000, 500));
+    }
+
+
+    $(".container").click(function (e) {
+        let tem = "<p>❤</p>";
+
+        let x = document.body.clientWidth / 2;
+        let y = document.body.clientHeight / 2;
+
+        $(this).append(tem);
+
+        $("p").css({
+            'position': 'absolute',
+            'top': y - 20,
+            'left': x,
+            'color': 'red'
+        });
+        $("p").animate({
+            'top': y - 300,
+            'opacity': 0,
+            'fontSize': randomNum(70, 40) + "px",
+        }, 1000, function () {
+            $(this).empty()
+        })
+    })
+</script>
+</body>
+</html>
